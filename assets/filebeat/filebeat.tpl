@@ -3,6 +3,10 @@
   enabled: true
   paths:
       - {{ .HostDir }}/{{ .File }}
+  multiline.pattern:  '^\[2'
+  multiline.negate: true
+  multiline.match: after
+  multiline.max_lines: 10000
   scan_frequency: 10s
   fields_under_root: true
   {{if .Stdout}}
